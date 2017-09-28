@@ -1,0 +1,32 @@
+{
+    "family": "bwce-hystrix",
+    "containerDefinitions": [
+        {
+            "image": "750037626691.dkr.ecr.ap-southeast-1.amazonaws.com/bwce-hystrix:latest",
+            "name": "bwce-hystrix",
+            "cpu": 10,
+            "memory": 512,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080
+                }
+            ],
+            "environment": [
+                {
+                    "name": "BW_LOGLEVEL",
+                    "value": "DEBUG"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "bwce-app-log",
+                    "awslogs-region": "ap-southeast-1",
+                    "awslogs-stream-prefix": "bwce"
+                }
+	    }
+        }
+    ]
+}
