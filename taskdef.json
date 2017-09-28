@@ -16,7 +16,7 @@
             "environment": [
                 {
                     "name": "BW_LOGLEVEL",
-                    "value": "DEBUG"
+                    "value": "ERROR"
                 }
             ],
             "logConfiguration": {
